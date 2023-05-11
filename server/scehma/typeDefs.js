@@ -23,6 +23,14 @@ export const typeDefs = `#graphql
     movie(name: String!): Movie!
   }
 
+  input UpdateUser {
+    id: ID!
+    name: String
+    username: String
+    age: Int
+    nationality: Nationality
+  }
+
   input UserInput {
     name: String!
     username: String!
@@ -31,7 +39,8 @@ export const typeDefs = `#graphql
   }
 
   type Mutation {
-    createUser(input: UserInput!): User!
+    createUser(input: UserInput!): User!,
+    updateUser(input: UpdateUser): User!
   }
 
   enum Nationality {

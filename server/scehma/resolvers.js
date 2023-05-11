@@ -15,6 +15,22 @@ export const resolvers = {
       UserList.push(user);
       return user;
     },
+    updateUser: (parent, args) => {
+      console.log(args.input.id);
+      const user = UserList.find(user => user.id === Number(args.input.id));
+
+      console.log({ user });
+
+      const { name, username, age, nationality } = { ...args.input };
+
+      console.log(name, username, age);
+      user.age = age;
+      user.name = name;
+      user.username = username;
+      user.nationality = nationality;
+
+      return user;
+    },
   },
   User: {
     favoriteMovies: () => {
