@@ -40,7 +40,8 @@ export const typeDefs = `#graphql
 
   type Mutation {
     createUser(input: UserInput!): User!,
-    updateUser(input: UpdateUser): User!
+    updateUser(input: UpdateUser): User!,
+    deleteUser(id: ID!): User
   }
 
   enum Nationality {
