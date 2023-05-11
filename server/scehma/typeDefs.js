@@ -23,6 +23,17 @@ export const typeDefs = `#graphql
     movie(name: String!): Movie!
   }
 
+  input UserInput {
+    name: String!
+    username: String!
+    age: Int!
+    nationality: Nationality = BRAZIL
+  }
+
+  type Mutation {
+    createUser(input: UserInput!): User!
+  }
+
   enum Nationality {
     CANADA
     BRAZIL
